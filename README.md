@@ -12,7 +12,7 @@
 &emsp;&emsp;另一方面，提取得到的*topic*可以揭示参与者的目的，从而进一步促进对其话语行为的理解 *(Qin et al., 2017)*。此外，*topic*和*discourse*的联合效应已经显示出有助于更好地理解微博对话，比如在下游任务预测用户参与度 *(Zeng et al., 2018b)*。
 
 
-![image][/png1.PNG]
+![mypng1](png1.PNG)
 
 &emsp;&emsp;反映讨论的*topic*的 *"supreme court"*,  *"gun right"*在话语流的上下文中出现,参与者通过陈述 *(making a statement)*，评论 *(giving a comment)*，提问*(asking a question)* 等等来推进对话，受此启发，我们假设微博对话可以被分成两个截然不同的部分：一为主题内容 *(topic content)* ，二为话语行为 *(discourse behavior)* 。
 
@@ -49,8 +49,7 @@ words*为 *“gun”*, *“control”* ，而*discourse word： *“what”* 和
 
 &emsp;&emsp;笔者认为序列模型在实践中更具有简单性和鲁棒性，把对话视作一些列回合 *(turn)* ，每一棵对话树被扁平化成一条条*root-to-leaf* 的路径。每一条路径被视为一个对话实例，而路径上的每一条消息对应一个回合  *(turn)* *(Zarisheva and Scheffler, 2015; Cerisara et al., 2018; Jiao et al., 2018)*。
 
-![mypng2][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png2.PNG]
-
+![mypng2](png2.PNG)
 &emsp;&emsp;Figure 2 是本文的模型架构，将对话c表示为消息的序列$(x_1,x_2,......,x_{M_c})$，$M_c$表示c中消息的数目。
 
 &emsp;&emsp;对话中，每个消息**x**，被称作**target message**，按序输入到模型中。模型用BoW模型处理target message x，$x_{BoW}\in\mathbb R^V$。
@@ -139,7 +138,7 @@ TREC 2011 microblog track(后称TREC)
 
 通过构建TREC的方法，利用Twitter API爬取2016年1月到6月的推文流(后称TWT16)，期间有大量关于美国选举的推文。利用Twitter搜索API补充Twitter流API返回结果中丢失的对话中的回复。 
 
-![mypng3][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png3.PNG]
+![mypng3](png3.PNG)
 
 数据集数据如图，80%，10%，10%划分训练集，验证集（development？），测试集。
 
@@ -186,8 +185,7 @@ Li et al. (2018),　非神经网络框架学习topics和discourse的模型。
 
 表2展示了给定N=5和N=10下产生主题的平均$C_v$得分。
 
-![mypng4][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png4.PNG]
-
+![mypng4](png4.PNG)
 观察得到：
 
  - 假设每个message只有一个topic的模型表现不佳（LF-DMM、Li et al. (2018),）
@@ -205,27 +203,26 @@ Li et al. (2018),　非神经网络框架学习topics和discourse的模型。
 
 表三，展示了对比结果。
 
-![mypng5][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png5.PNG]
+![mypng5](png5.PNG)
 
 图四是一张热图，每一行可视化了带有一个discourse行为的信息，在discourse角色上的分布。可见的是很多discourse行为聚集在一个或两个主要的discourse角色上（比如“greetings”,“thanking”, “exclamation”, and “offer”）
 
-![mypng6][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png6.PNG]
+![mypng6](png6.PNG)
 
 ### Message Representations
 &emsp;&emsp;为了证明本文捕获的message表征有效，以推文分类为例子验证，结果如表4。
-![mypng7][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png7.PNG]
+![mypng7](png7.PNG)
 
 ### Example Topics and Discourse Roles
 
-![mypng8][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png8.PNG]
-
+![mypng8](png8.PNG)
 topics：联合discourse产生的topical word，都与话题产生相关性
 discourse：在两个数据集上单独训练得到的discourse词有明显重叠的部分。
 
 ### Further Discussions
 - 关于参数topics数（K）和discourse roles数（D）的影响。
 
-![mypng9][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png9.PNG]
+![mypng9](png9.PNG)
 
 TREC K=80到达峰值
 
@@ -234,12 +231,12 @@ TWT16 K=20到达峰值，可能因为讨论美国选举较为集中。
 D=15到达峰值，与基准中手动注释的discourse行为数目相同。
 
 - $p(w|z)$,$p(w|d)$可视化
-![mypng10][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png10.PNG]
+![mypng10](png10.PNG)
 
 蓝色表示discourse词，红色表示topic词，深浅表示置信度，可以看出discourse词和topic词区分的很明显。
 
 - 模型扩展性，与其他模型一起训练效果更优
-  ![mypng11][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png11.PNG]
+  ![mypng11](png11.PNG)
 
 - 错误分析
 
