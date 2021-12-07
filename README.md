@@ -12,7 +12,7 @@
 &emsp;&emsp;另一方面，提取得到的*topic*可以揭示参与者的目的，从而进一步促进对其话语行为的理解 *(Qin et al., 2017)*。此外，*topic*和*discourse*的联合效应已经显示出有助于更好地理解微博对话，比如在下游任务预测用户参与度 *(Zeng et al., 2018b)*。
 
 
-![mypng1][https://github.com/coconod/Note-What-You-Say-and-How-You-Say-it-Joint-Modeling-of-Topics-and-Discourse-in-Microblog-Conv/blob/main/png1.PNG]
+![image][/png1.PNG]
 
 &emsp;&emsp;反映讨论的*topic*的 *"supreme court"*,  *"gun right"*在话语流的上下文中出现,参与者通过陈述 *(making a statement)*，评论 *(giving a comment)*，提问*(asking a question)* 等等来推进对话，受此启发，我们假设微博对话可以被分成两个截然不同的部分：一为主题内容 *(topic content)* ，二为话语行为 *(discourse behavior)* 。
 
